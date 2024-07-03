@@ -47,7 +47,9 @@ clean:
 ifdef OS
 	powershell.exe if (Test-Path $(OBJPATH)) {Remove-Item $(OBJPATH) -Recurse}
 	powershell.exe if (Test-Path $(EXE)) {Remove-Item $(EXE)}
+	powershell.exe if (Test-Path $(MAKEDEPSPATH)) {Remove-Item $(MAKEDEPSPATH) -Recurse}
 else
 	rm -r $(OBJPATH)
 	rm -r $(EXE)
+	rm -rf $(MAKEDEPSPATH)
 endif
